@@ -4,20 +4,20 @@
   tasks:
   - name: Create frontend instance
     include_role:
-       name: instances
-       vars_from: frontend.yaml
+       name: osp-servers
+       vars_from: frontend.yml
   - name: Create app1 instance
     include_role:
-       name: instances
-       vars_from: app1.yaml
+       name: osp-servers
+       vars_from: app1.yml
   - name: Create app2 instance
     include_role:
-       name: instances
-       vars_from: app2.yaml
+       name: osp-servers
+       vars_from: app2.yml
   - name: Create db instance
     include_role:
-       name: instances
-       vars_from: db.yaml
+       name: osp-servers
+       vars_from: db.yml
   - name: Gather facts
     include_role:
        name: osp-facts
