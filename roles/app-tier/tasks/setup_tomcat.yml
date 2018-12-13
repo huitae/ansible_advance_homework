@@ -14,9 +14,9 @@
        src: index.html.j2
        dest: /usr/share/tomcat/webapps/ansible/index.html
        mode: 0644
-   - name: start tomcat
+   - name: restart tomcat
      service:
        name: tomcat
-       state: started
+       state: restarted
        enabled: true
   tags: tomcat
