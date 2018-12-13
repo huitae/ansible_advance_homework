@@ -4,7 +4,7 @@
   os_server_facts:
     cloud: ospcloud
     region_name: RegionOne
-    register: result
+  register: result
 
 - name: Delete instances
   os_server:
