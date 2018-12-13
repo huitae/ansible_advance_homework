@@ -1,2 +1,24 @@
 ---
 # tasks file for db-tier
+- block:
+   - name: install progress
+     yum:
+       name: postgresql-server
+       state: latest
+   - name: Check if PostgreSQL database is initialized.
+     stat:
+       path: "{{ postgresql_data_dir }}/PG_VERSION"
+     register: pgdata_dir_version
+   - name: Ensure PostgreSQL database is initialized.
+     command: "{{ postgresql_bin_path }}/initdb -D {{ postgresql_data_dir }}"
+     when: not pgdata_dir_version.stat.exists
+     become: true
+     become_user: "{{ postgresql_user }}"
+   - name: start postgres
+     service:
+       name: postgresql.service
+       state: started
+       enabled: true
+  tags:
+    - dbs
+    - postgres

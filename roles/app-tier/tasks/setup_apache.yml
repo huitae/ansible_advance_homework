@@ -1,0 +1,14 @@
+---
+# tasks file for app-tier
+- block:
+   - name: install apache
+     yum:
+       name: httpd
+       state: latest
+   - name: start apache
+     service:
+       name: httpd
+       state: started
+       enabled: true
+  tags:  
+    - apps
