@@ -3,7 +3,7 @@
   tasks:
   - name: Curl website
     uri:
-     url: "http://{{item}}/ansible/index.html"
+     url: "http://{{item}}/"
      return_content: yes
     with_items:
       - "{{ inventory_hostname }}"

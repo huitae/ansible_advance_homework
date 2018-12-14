@@ -10,7 +10,7 @@
       - osp.smoke
   - name: Curl website
     uri:
-     url: "http://{{item.public_v4}}/ansible/index.html"
+     url: "http://{{item.public_v4}}/
      return_content: yes
     with_items:
       - "{{ openstack_info.ansible_facts.openstack_servers }}"
