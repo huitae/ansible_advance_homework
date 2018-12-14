@@ -43,7 +43,7 @@
     # TODO: this shell task is not working yet!
     - name: order service on opentlc
       #shell: source /root/credential.rc; ./order_svc.sh -y -c 'OPENTLC Automation' -i 'Ansible Advanced' -t 1 -d 'dialog_expiration=7;region=na;nodes=1;dialog_runtime=8'
-      shell: source /root/credential.rc; ./order_svc.sh -y -c 'OPENTLC Automation' -i 'Ansible Advanced' -t 1 -d 'dialog_expiration=7;region=apac;nodes=1;dialog_runtime=8'
+      shell: source /root/credential.rc; ./order_svc.sh -y -c 'OPENTLC Automation' -i 'Ansible Advanced' -t 1 -d 'dialog_expiration=7;region=ap-northeast-1;nodes=1;dialog_runtime=8'
       args:
         chdir: /root
     - name: Wait for mail
