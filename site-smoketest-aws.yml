@@ -1,5 +1,5 @@
-- hosts: localhost
-  gather_facts: true
+- hosts: frontends
+  gather_facts: false
   tasks:
   - name: Curl website
     uri:
