@@ -3,7 +3,7 @@
   tasks:
   - name: Use Uri module for wrting smoke test.
     uri:
-     url: "http://{{item}}"
+     url: "http://{{item}}/ansible/index.html"
      return_content: yes
     with_items:
       - "{{ inventory_hostname }}"
