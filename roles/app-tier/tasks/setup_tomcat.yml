@@ -7,16 +7,18 @@
        state: latest
    - name: create ansible tomcat directory
      file:
-       path: /usr/share/tomcat/webapps
+       path: /usr/share/tomcat/webapps/ROOT
        state: directory
-   - name: copy static index.html to tomcat webapps/index.html
+   - name: copy static index.html to tomcat webapps/ROOT/index.html
      template:
        src: index.html.j2
-       dest: /usr/share/tomcat/webapps/index.html
+       dest: /usr/share/tomcat/webapps/ROOT/index.html
        mode: 0644
    - name: restart tomcat
      service:
        name: tomcat
        state: restarted
        enabled: true
-  tags: tomcat
+  tags: 
+    - tomcat
+    - apps
